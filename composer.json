@@ -1,0 +1,8 @@
+{
+    "name": "adins/permitmanagement",
+    "description": "permit management system capstone project",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {}
+}
