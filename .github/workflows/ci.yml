@@ -1,35 +1,28 @@
-name: ci
+name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '7.4'
-        extensions: mysqli
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'  # Specify your PHP version
+          extensions: mbstring, xml  # Add any other required extensions
+          coverage: none
 
-    - name: Validate PHP syntax
-      run: find . -name '*.php' -print0 | xargs -0 -n 1 php -l
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
 
-    - name: Install PHP dependencies
-      run: composer install
-
-    - name: Check for PHPUnit
-      run: ls -la vendor/bin
-
-    - name: Run tests
-      run: ./vendor/bin/phpunit --testdox
+      - name: Run PHPUnit tests
+        run: ./vendor/bin/phpunit --testdox
