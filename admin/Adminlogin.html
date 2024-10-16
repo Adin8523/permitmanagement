@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"  rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="../style/style.css">
+    <title>LGU User Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Side bar-->
+        <aside id="sidebar">
+            <div class="toggle">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/qclogo_main.jpg"></a>
+                    <h2>LGU</h2>
+                </div>
+                <div class="close" id="toggle-btn">
+                    <span class="material-icons-sharp">menu_open</span>
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <a href="/../index.html">
+                    <span class="material-icons-sharp">campaign</span>
+                    <h3>Announcements</h3>
+                </a>
+                
+            </div>
+        </aside>
+        <!--Sidebar end-->
+
+        <!--Main content per page-->
+        <main>
+            
+            <div class="admin-login-container">
+                <h1 class="admin-login-title">Admin Login</h1>
+                <form action="admin_login.php" method="POST" class="admin-login-form">
+                    <div class="admin-form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" id="username" required class="admin-input">
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="password" required class="admin-input">
+                    </div>
+                    <button type="submit" class="admin-login-button">Login</button>
+                </form>
+            </div>
+            
+        </main>
+
+        <!-- Light/Dark Mode Toggle Button -->
+        <nav class="navigation">
+            <button id="theme-toggle" class="btn-theme-toggle">
+                <span class="material-symbols-outlined">light_mode</span>
+            </button>
+
+            
+        </nav>
+    </div>
+
+   
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 LGU User Dashboard. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="Privacy.html">Privacy Policy</a></li>
+                <li><a href="Terms.html">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
