@@ -1,14 +1,10 @@
-name: CI
+name: PHP Unit Tests
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -16,11 +12,11 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4.33'  # Specify your PHP version
+          php-version: '7.4'
           tools: composer
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: composer install
 
-      - name: Run Tests
-        run: ./vendor/bin/phpunit --testdox
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit
